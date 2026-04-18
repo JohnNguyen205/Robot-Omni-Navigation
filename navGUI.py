@@ -174,7 +174,7 @@ class NavigationWindow(QMainWindow):
         self.queue_list = QListWidget()
         mid_layout.addWidget(self.queue_list)
         
-        self.clear_btn = QPushButton("🗑️ XÓA HÀNG ĐỢI")
+        self.clear_btn = QPushButton("🗑️ CLEAR QUEUE")
         self.clear_btn.setStyleSheet("background-color: #f38ba8; color: #11111b; margin-bottom: 10px;")
         self.clear_btn.clicked.connect(self.clear_queue)
         mid_layout.addWidget(self.clear_btn)
@@ -196,7 +196,7 @@ class NavigationWindow(QMainWindow):
         self.status_label.setStyleSheet("font-weight: bold; color: #f9e2af; font-size: 14px;")
         right_panel.addWidget(self.status_label)
 
-        self.start_btn = QPushButton("🚀 CHẠY LỘ TRÌNH")
+        self.start_btn = QPushButton("🚀 START NAVIGATION")
         self.start_btn.setMinimumHeight(60)
         self.start_btn.clicked.connect(self.start_navigation)
         right_panel.addWidget(self.start_btn)
@@ -220,7 +220,7 @@ class NavigationWindow(QMainWindow):
         ax.clear()
         self.queue_list.clear()
         for i, room in enumerate(optimized_rooms):
-            self.queue_list.addItem(f"✅ Bước {i+1}: {room.replace('_', ' ').title()}")
+            self.queue_list.addItem(f"✅ Step {i+1}: {room.replace('_', ' ').title()}")
 
         rx, ry = 0.0, 12.0
         x_pts, y_pts = [rx], [ry]
@@ -231,14 +231,14 @@ class NavigationWindow(QMainWindow):
 
         ax.plot(x_pts, y_pts, color='#f9e2af', marker='o', markersize=8, markerfacecolor='#89b4fa', linewidth=2)
         ax.plot(rx, ry, 'r*', markersize=15, label='Start')
-        ax.set_title(f"Lộ trình tối ưu (Tổng: {total_dist:.2f}m)", color='#cdd6f4')
+        ax.set_title(f"Optimized road (Total: {total_dist:.2f}m)", color='#cdd6f4')
         ax.grid(True, color='#45475a', linestyle='--')
         self.ga_canvas.draw()
 
     def start_navigation(self):
         if not self.selected_rooms: return
         
-        self.status_label.setText("Status: Đang tối ưu lộ trình...")
+        self.status_label.setText("Status: Thinking best road")
         QApplication.processEvents()
         
         optimized, dist = optimize_room_order(self.selected_rooms, self.rooms_data)
@@ -246,7 +246,7 @@ class NavigationWindow(QMainWindow):
         
         # Tạo chuỗi văn bản thông báo lộ trình
         path_str = " -> ".join([r.replace('_', ' ').title() for r in optimized])
-        self.status_label.setText(f"Lộ trình: {path_str}\n(Tổng: {dist:.2f}m)")
+        self.status_label.setText(f"Road: {path_str}\n(Total: {dist:.2f}m)")
         
         waypoint_seq = []
         num_rooms = len(optimized)
@@ -258,24 +258,24 @@ class NavigationWindow(QMainWindow):
             
             # 1. ĐI VÀO PHÒNG
             if 'door' in r_data:
-                waypoint_seq.append((f"{name} (Vào - Door)", r_data['door']))
+                waypoint_seq.append((f"{name} (Go to - Door)", r_data['door']))
             if 'inside' in r_data:
-                waypoint_seq.append((f"{name} (Vào - Inside)", r_data['inside']))
+                waypoint_seq.append((f"{name} (Go to - Inside)", r_data['inside']))
             if 'center' in r_data:
-                waypoint_seq.append((f"{name} (Dừng - Center)", r_data['center']))
+                waypoint_seq.append((f"{name} (Stop - Center)", r_data['center']))
             
             # 2. ĐI RA KHỎI PHÒNG (Trừ phòng cuối)
             if not is_last_room:
                 if 'inside' in r_data:
-                    waypoint_seq.append((f"{name} (Ra - Inside)", r_data['inside']))
+                    waypoint_seq.append((f"{name} (Go out - Inside)", r_data['inside']))
                 if 'door' in r_data:
-                    waypoint_seq.append((f"{name} (Ra - Door)", r_data['door']))
+                    waypoint_seq.append((f"{name} (Go out - Door)", r_data['door']))
         
         # Cập nhật Status sau 2 giây để hiện thông báo bắt đầu di chuyển
         QTimer.singleShot(2000, lambda: self.ros_node.start_navigation(waypoint_seq))
 
     def connect_signals(self):
-        self.ros_node.goal_status_signal.connect(lambda msg, nav: self.status_label.setText(f"Trạng thái: {msg}"))
+        self.ros_node.goal_status_signal.connect(lambda msg, nav: self.status_label.setText(f"Status: {msg}"))
 
 from PyQt5.QtCore import QTimer
 

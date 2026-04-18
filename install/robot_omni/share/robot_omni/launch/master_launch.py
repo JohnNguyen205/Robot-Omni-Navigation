@@ -41,9 +41,3 @@ def generate_launch_description():
         delay_localization,
         delay_navigation
     ])
-"""
-colcon build --packages-select robot_omni
-source install/setup.bash
-ros2 launch robot_omni master_launch.py
-./move.sh
-"""    
