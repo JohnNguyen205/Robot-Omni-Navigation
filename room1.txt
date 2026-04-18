@@ -1,0 +1,108 @@
+
+rooms:
+  room_1:
+    door:   {x: -2.030, y: 5.3015, yaw: 3.14}
+    inside: {x: -3.945, y: 5.183, yaw: 3.14}
+    center: {x: -5.889, y: 4.568, yaw: 0.0}
+
+  room_2:
+    door:   {x: 0.8784, y: 6.7611, yaw: 3.14}
+    inside: {x: -1.169, y: 6.846, yaw: 3.14}
+    center: {x: -2.450, y: 8.356, yaw: -0.3}
+
+  room_3:
+    door:   {x: 0.829, y: 8.029, yaw: 1.57}
+    inside: {x: 0.881, y: 9.920, yaw: 1.57}
+    center: {x: 1.826, y: 10.311, yaw: -1.65}
+
+  room_4:
+    door:   {x: 7.166, y: 7.873, yaw: 1.57}
+    inside: {x: 7.217, y: 10.043, yaw: 1.57}
+    center: {x: 6.271, y: 10.541, yaw: -1.57}
+
+  room_5:
+    door:   {x: 21.009, y: 5.618, yaw: 1.57}
+    inside: {x: 21.037, y: 7.635, yaw: 1.57}
+    center: {x: 16.905, y: 8.513, yaw: -0.3}
+
+  room_6:
+    door:   {x: 35.136, y: 5.552, yaw: 1.57}
+    inside: {x: 35.269, y: 8.018, yaw: 1.57}
+    center: {x: 31.297, y: 8.491, yaw: -0.3}
+
+  room_7:
+    door:   {x: 37.325, y: 5.325, yaw: 0.0}
+    inside: {x: 38.690, y: 5.418, yaw: 0.0}
+    center: {x: 41.154, y: 2.053, yaw: -3.14}
+
+  room_8:
+    door:   {x: 36.425, y: -5.090, yaw: 0.0}
+    inside: {x: 45.162, y: -4.900, yaw: 0.0}
+    center: {x: 45.411, y: 2.270, yaw: 0.5}
+
+  room_9:
+    door:   {x: 37.037, y: -5.089, yaw: -1.57}
+    inside: {x: 36.868, y: -8.237, yaw: -1.57}
+    center: {x: 38.968, y: -10.070, yaw: 0.0}
+
+  room_10:
+    door:   {x: 34.941, y: -5.705, yaw: -1.57}
+    inside: {x: 34.945, y: -7.716, yaw: -1.57}
+    center: {x: 29.966, y: -8.250, yaw: 0.5}
+
+  room_11:
+    door:   {x: 21.050, y: -5.993, yaw: -1.57}
+    inside: {x: 20.967, y: -8.266, yaw: -1.57}
+    center: {x: 15.725, y: -8.276, yaw: 0.5}
+
+  room_12:
+    door:   {x: 7.074, y: -7.855, yaw: -1.57}
+    inside: {x: 7.166, y: -10.215, yaw: -1.57}
+    center: {x: 5.855, y: -10.217, yaw: 1.57}
+
+  room_13:
+    door:   {x: 0.8395, y: -8.4189, yaw: -1.57}
+    inside: {x: 0.8497, y: -9.5519, yaw: -1.57}
+    center: {x: 1.9744, y: -9.5866, yaw: 1.57}
+
+  room_14:
+    door:   {x: 0.6232, y: -6.6345, yaw: 3.14}
+    inside: {x: -0.4187, y: -6.6613, yaw: 3.14}
+    center: {x: -2.2354, y: -7.4911, yaw: 0.5}
+
+  room_15:
+    door:   {x: -2.105, y: -5.161, yaw: 3.14}
+    inside: {x: -3.939, y: -5.164, yaw: 3.14}
+    center: {x: -5.688, y: -4.643, yaw: 0.0}
+
+  room_16:
+    door:   {x: 11.162, y: 2.558, yaw: 0.0}
+    inside: {x: 12.647, y: 2.560, yaw: 0.0}
+    center: {x: 15.532, y: 1.254, yaw: -3.14}
+
+  room_17:
+    door:   {x: 21.3461, y: 2.576, yaw: 0.0}
+    inside: {x: 28.723, y: 2.677, yaw: 0.0}
+    center: {x: 23.483, y: 1.531, yaw: -3.14}
+
+  room_18:
+    door:   {x: 27.3519, y: 2.8538, yaw: 0.0}
+    inside: {x: 28.810, y: 2.502, yaw: 0.0}
+    center: {x: 31.695, y: 1.721, yaw: -3.14}
+
+  room_19:
+    door:   {x: 27.000, y: -3.000, yaw: 0.0}
+    inside: {x: 29.0291, y: -2.7504, yaw: 0.0}
+    center: {x: 29.517, y: -1.955, yaw: -3.14}
+
+  room_20:
+    door:   {x: 21.0763, y: -2.81636, yaw: 0.0}
+    inside: {x: 22.9885, y: -2.0173, yaw: 0.0}
+    center: {x: 23.7682, y: -1.4239, yaw: -3.14}
+
+  room_21:
+    door:   {x: 11.4241, y: -2.8591, yaw: 0.0}
+    inside: {x: 12.482, y: -2.948, yaw: 0.0}
+    center: {x: 15.235, y: -1.317, yaw: -3.14}
+
+  
