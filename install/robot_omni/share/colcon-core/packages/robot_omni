@@ -1,1 +1,0 @@
-cartographer_ros:controller_manager:geometry_msgs:joint_state_publisher:nav2_simple_commander:nav_msgs:rclcpp:robot_localization:robot_state_publisher:ros_gz_bridge:ros_gz_sim:rviz_imu_plugin:sensor_msgs:slambot_localization:std_msgs:tf2:tf2_ros:tf_transformations

@@ -1,0 +1,11 @@
+# ROS 2 ignore
+build/
+install/
+log/
+
+# Python ignore
+__pycache__/
+*.pyc
+
+# IDE ignore
+.vscode/
