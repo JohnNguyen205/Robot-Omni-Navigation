@@ -13,7 +13,7 @@ The project leverages **ROS 2**, **Gazebo Classic** for physics calculations, an
 
 ---
 
-## 1. 🗂️ System Architecture & Framework
+## 1.  System Architecture & Framework
 
 The system utilizes asynchronous ROS 2 action servers and topics to handle path planning, GUI communication, and sensor rendering simultaneously. 
 
@@ -28,7 +28,7 @@ Fundamental to the robot's perception is the TF tree. It connects the world `map
 
 ---
 
-## 2. 🌍 Simulation & Environment Mapping
+## 2.  Simulation & Environment Mapping
 
 The hospital environment is not merely visual; it possesses heavy collision boundaries, doorways, and varying corridors. 
 
@@ -42,7 +42,7 @@ Before pathfinding begins, the environment is scanned via SLAM (Cartographer or 
 
 ---
 
-## 3. 🧠 Navigation 2 (Nav2) Stack Configuration
+## 3.  Navigation 2 (Nav2) Stack Configuration
 
 Nav2 acts as the core autopilot mechanics. It processes the LIDAR sensory data against the static map to travel safely. 
 
@@ -66,7 +66,7 @@ The robot is programmed with a custom behavior tree layout (`my_nav_recovery.xml
 
 ---
 
-## 4. 🔀 Route Optimization via Genetic Algorithm 
+## 4.  Route Optimization via Genetic Algorithm 
 
 When doctors dispatch the robot to deliver meds across 5+ different rooms, relying on basic FIFO (First-In-First-Out) task ordering creates severe battery and time inefficiencies. We utilize Evolutionary Computation to fix this.
 
@@ -86,14 +86,14 @@ The winning sequence is broken down into sub-goals (`Entry Door` -> `Room Inside
 
 ---
 
-## 5. 🧑‍⚕️ Dynamic Obstacle Interference Testing
+## 5.  Dynamic Obstacle Interference Testing
 
 To strictly validate the robot's local DWB/TEB planners, we employ an bash-level injection.
 The `move.sh` script executes Gazebo Transport calls (`gz topic ...`) that continually thrust wheelchairs and medical personnel directly into the robot's path. This forces Nav2 to dynamically reconstruct its path mid-transit, slowing velocity or swerving to avoid catastrophic collisions.
 
 ---
 
-## 6. 🚀 Setup & Execution Guide
+## 6.  Setup & Execution Guide
 
 ### Step 1: Initialize the Workspace
 Open a fresh terminal, traverse to the root, and build:
